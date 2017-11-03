@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import ShowTodo from './showTodo.js';
 
 class App extends Component {
+  constructor(){
+    super();
+    this.state = {
+      todo: 
+      [
+        {
+          title: 'Clean House',
+          note: 'blah blah'
+        },
+        {
+          title: 'Go Shopping'
+        }
+      ]
+    }
+  }
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+      <div>
+        <h1>To-Do</h1>
+        <ShowTodo todo={this.state.todo}/>
       </div>
     );
   }
