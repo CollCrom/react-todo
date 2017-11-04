@@ -5,7 +5,8 @@ class ShowTodo extends Component {
 		const todoList = this.props.todo.map((item, i)=> {
 			return (<div key={i}>
                 <h3>ToDo: {item.title}</h3>
-                <p>Note: {item.note}</p>
+                <h4>Notes:</h4>
+                <p>{item.note}</p>
               </div>)
     });
     return (<ul>
