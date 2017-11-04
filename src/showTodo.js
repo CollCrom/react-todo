@@ -13,7 +13,7 @@ class ShowTodo extends Component {
                 <p>{item.note}</p>
                 <button onClick={this.props.todoDone} className={doneBtn}>Done</button>
                 <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={this.props.todoDelete} value={item.title}>Delete</button>
               </div>)
     });
     return (<ul>
