@@ -7,28 +7,31 @@ class App extends Component {
     super();
     this.state = {
       todo: [],
-      makeNewList: false
+      makeNewList: false,
+      todoDone: false
     }
   }
   makeTodo = (list) =>{
-    console.log(list ,'list')
     const state = this.state;
     state.todo.push(list);
     state.makeNewList = false;
-    console.log(state.todo, 'state')
     this.setState(state);
-    console.log(this.state.todo, 'this.state')
   }
   showNew = () =>{
     const state = this.state;
     state.makeNewList = true;
     this.setState(state);
   }
+  todoDone = () => {
+    const state = this.state;
+    state.todoDone = true;
+    this.setState(state)
+  }
   render() {
     return (
       <div>
         <h1>To-Do</h1>
-        <ShowTodo todo={this.state.todo}/>
+        <ShowTodo todo={this.state.todo} todoDone={this.todoDone} done={this.state.todoDone}/>
         {!this.state.makeNewList ? <button onClick={this.showNew}>NewList</button> : <NewList makeTodo={this.makeTodo}/>}
       </div>
     );
