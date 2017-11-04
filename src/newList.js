@@ -20,14 +20,11 @@ class NewList extends Component {
 		e.preventDefault();
 		this.props.makeTodo(this.state.todo)
 		const state = this.state;
-		state.todo.title = '';
-		state.todo.note = '';
 		this.setState(state);
 	}
 	render(){
 		return(
 			<form>
-				<h2>NewList</h2>
 				<h3>Title:</h3>
 				<input name='title' type='text' onChange={this.handleChange} placeholder='List Title' value={this.state.todo.title}/>
 				<h4>Notes</h4>
