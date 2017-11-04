@@ -26,7 +26,7 @@ class App extends Component {
     state.makeNewList = true;
     this.setState(state);
   }
-  todoDone = () => {
+  todoDone = (e) => {
     const state = this.state;
     state.todoDone = true;
     this.setState(state)
@@ -60,7 +60,7 @@ class App extends Component {
     return (
       <div>
         <h1>To-Do</h1>
-        <ShowTodo todo={this.state.todo} todoDone={this.todoDone} done={this.state.todoDone} todoDelete={this.todoDelete} showEdit={this.showEdit}/>
+        <ShowTodo todo={this.state.todo} todoDone={this.todoDone} done={this.state.todoDone} todoDelete={this.todoDelete} showEdit={this.showEdit} doneTitle={this.state.doneTitle}/>
         {!this.state.makeNewList ? <button onClick={this.showNew}>NewList</button> : <NewList makeTodo={this.makeTodo}/>}
         {this.state.showEdit ? <Edit editObj={this.state.editObj} todoEdit={this.todoEdit}/> : null}
       </div>
